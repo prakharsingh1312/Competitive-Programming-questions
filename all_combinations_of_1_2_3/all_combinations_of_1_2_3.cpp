@@ -11,7 +11,7 @@ int main()
         { 
             for(int c=1; c<=3; c++)
             {
-                cout<<i<<j<<k<<endl;
+                cout<<a<<b<<c<<endl;
             }
         }
     }
