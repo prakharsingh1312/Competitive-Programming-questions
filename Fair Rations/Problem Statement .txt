@@ -1,62 +1,58 @@
-You are the benevolent ruler of Rankhacker Castle, and today you're distributing bread. Your subjects are in a line, and some of them already have some loaves. Times are hard and your castle's food stocks are dwindling, so you must distribute as few loaves as possible according to the following rules:
+You have been asked to help study the population of birds migrating across the continent. Each type of bird you are interested in will be identified by an integer value. Each time a particular kind of bird is spotted, its id number will be added to your array of sightings. You would like to be able to find out which type of bird is most common given a list of sightings. Your task is to print the type number of that bird and if two or more types of birds are equally common, choose the type with the smallest ID number.
 
-   1. Every time you give a loaf of bread to some person i, you must also give a loaf of bread to the person immediately in front of or behind them in the line (i.e., persons i+1 or i-1 ).
-   2. After all the bread is distributed, each person must have an even number of loaves.
-
-Given the number of loaves already held by each citizen, find and print the minimum number of loaves you must distribute to satisfy the two rules above. If this is not possible, print NO.
-
-For example, the people in line have loaves B={4,5,6,7}. We can first give a loaf to i=3 and i=4 so B={4,5,7,8}. Next we give a loaf to i=2 and i=3 and have B={4,6,8,8} which satisfies our conditions. We had to distribute 4 loaves.
+For example, assume your bird sightings are of types . There are two each of types  and , and one sighting of type . Pick the lower of the two types seen twice: type .
 
 Function Description
 
-Complete the fairRations function in the editor below. It should return an integer that represents the minimum number of loaves required.
+Complete the migratoryBirds function in the editor below. It should return the lowest type number of the most frequently sighted bird.
 
-fairRations has the following parameter(s):
+migratoryBirds has the following parameter(s):
 
-    B: an array of integers that represent the number of loaves each persons starts with .
-
+arr: an array of integers representing types of birds sighted
 Input Format
 
-The first line contains an integer N , the number of subjects in the bread line.
-
-The second line contains N space-separated integers B[i] .
+The first line contains an integer denoting , the number of birds sighted and reported in the array . 
+The second line describes  as  space-separated integers representing the type numbers of each bird sighted.
 
 Constraints
 
-2<=N<=1000
-1<=B[i]<=10, where 1<=i<=N
-
+It is guaranteed that each type is , , , , or .
 Output Format
 
-Print a single integer taht denotes the minimum number of loaves that must be distributed so that every person has an even number of loaves. If it's not possible to do this, print NO.
+Print the type number of the most common bird; if two or more types of birds are equally common, choose the type with the smallest ID number.
 
 Sample Input 0
 
-5
-2 3 4 5 6
-
+6
+1 4 4 4 5 3
 Sample Output 0
 
 4
-
 Explanation 0
 
-The initial distribution is (2,3,4,5,6). The requirements can be met as follows:
+The different types of birds occur in the following frequencies:
 
-    Give 1 loaf of bread each to the second and third people so that the distribution becomes (2,4,5,5,6).
-    Give 1 loaf of bread each to the third and fourth people so that the distribution becomes (2,4,6,6,6).
-
-Each of the N subjects has an even number of loaves after 4 loaves were distributed.
+Type :  bird
+Type :  birds
+Type :  bird
+Type :  birds
+Type :  bird
+The type number that occurs at the highest frequency is type , so we print  as our answer.
 
 Sample Input 1
 
-2
-1 2
-
+11
+1 2 3 4 5 4 3 2 1 3 4
 Sample Output 1
 
-NO
-
+3
 Explanation 1
 
-The initial distribution is (1,2). As there are only 2 people in the line, any time you give one person a loaf you must always give the other person a loaf. Because the first person has an odd number of loaves and the second person has an even number of loaves, no amount of distributed loaves will ever result in both subjects having an even number of loaves. 
+The different types of birds occur in the following frequencies:
+
+Type : 
+Type : 
+Type : 
+Type : 
+Type : 
+Two types have a frequency of , and the lower of those is type .
